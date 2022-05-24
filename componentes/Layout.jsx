@@ -8,9 +8,7 @@ export default function Layout({ children, title, description }) {
         <title>{title} </title>
         <meta name="description" content={description} />
       </Head>
-      <nav>Navbar</nav>
       <main>{children}</main>
-      <footer>Footer</footer>
     </div>
   );
 }

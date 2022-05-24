@@ -1,6 +1,7 @@
 //index le da la referencia dentro de la carpeta para que estableza la ruta.
 /* import Head from "next/head";
 import Link from "next/link"; */
+import Link from "next/link";
 import Layout from "../../componentes/Layout";
 //link optimisa la navegacion en la pagina, mas efectivo que pasar <a> directamente.
 
@@ -14,12 +15,16 @@ export default function index({ data }) {
       </Layout>
       <div>
         {data.map(({ id, title, body, userId }) => (
-          <>
-            <h1 key={id}>
-              {userId} - {title.toUpperCase()}
-            </h1>
+          <div key={id}>
+            <h2>
+              <Link href={`/blog/${id}`}>
+                <a>
+                  {id} - {title}{" "}
+                </a>
+              </Link>
+            </h2>
             <p>{body} </p>
-          </>
+          </div>
         ))}
       </div>
     </div>
